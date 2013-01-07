@@ -4,6 +4,12 @@
 
 $(document).ready(function ($)
     {
+        $(window).scroll(function ()
+            {
+            var bg = -$(window).scrollTop() / 6 + "px";
+            $("body").css("background-position", "0px "+bg);
+            })
+
         // Toggle containers
         $("h2").on("click", function ()
         {
