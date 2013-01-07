@@ -1,0 +1,385 @@
+@import "main.css";
+
+@gray: rgb(61, 66, 76);
+@blue: rgb(59, 95, 144);
+@light-blue: rgb(145, 166, 195);
+@green: rgb(143, 191, 45);
+@dark-green: rgb(109, 143, 39);
+@light-green: rgb(195, 208, 148);
+@lighter-green: rgb(240, 244, 228);
+@brown: rgb(90, 67, 61);
+@light-brown: rgb(120, 98, 91);
+/* FONTS*/
+
+@font-face
+    {
+    font-family: "Arvil Sans";
+    src: url('../font/arvil_sans-webfont.eot');
+    src: url('../font/arvil_sans-webfont.eot?#iefix') format('embedded-opentype')
+       , url('../font/arvil_sans-webfont.svg#arvil_sansregular') format('svg')
+       , url('../font/arvil_sans-webfont.woff') format('woff')
+       , url('../font/arvil_sans-webfont.ttf') format('truetype')
+       ;
+    font-weight: normal;
+    font-style: normal;
+    }
+
+p, ul, li
+    {
+    color: @gray;
+    margin-bottom: 0px;
+    font-family: "Junction Regular";
+    font-size: 10pt;
+    }
+
+h1, h2, h3
+    {
+    font-family: "Arvil Sans";
+    }
+
+body
+    {
+    background: url(../img/wood.png) 0px 0px repeat rgb(226,193,149);
+    background-attachment: fixed;
+    }
+
+header, div.block, h2
+    {
+    background: white;
+    padding: 40px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.3);
+    margin-bottom: 40px;
+    }
+
+header
+    {
+    position: relative;
+    }
+
+#photo
+    {
+    width: 120px;
+    height: 120px;
+    background: white;
+    padding: 8px;
+    box-shadow: 0px 1px 3px rgba(0,0,0,.4);
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    transform:         rotate(10deg);
+        -ms-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+         -o-transform: rotate(10deg);
+       -moz-transform: rotate(10deg);
+    z-index: 100;
+    transition: all .7s ease;
+    -webkit-transition: all .7s ease;
+       -moz-transition: all .7s ease;
+        -ms-transition: all .7s ease;
+         -o-transition: all .7s ease;
+    &:hover
+        {
+        width: 320px;
+        height: 320px;
+        top: 40px;
+        box-shadow: 0px 6px 12px 4px rgba(0,0,0,.2);
+        transform:         rotate(-2deg);
+            -ms-transform: rotate(-2deg);
+        -webkit-transform: rotate(-2deg);
+             -o-transform: rotate(-2deg);
+           -moz-transform: rotate(-2deg);
+        }
+    }
+
+@media only screen and (max-width: 767px) {
+    #photo
+        {
+        width: 100px;
+        height: 100px;
+        padding: 6px;
+        right: 20px;
+        }
+}
+
+.main aside
+    {
+    .inner
+        {
+        }
+    h3
+        {
+        margin: 20px 0px 10px 0px;
+        color: @brown;
+        text-shadow: 0px 1px 0px rgba(255,255,255,.5);
+        font-size: 36px;
+        }
+    h4, li
+        {
+        font-family: "Junction Regular";
+        color: @light-brown;
+        text-shadow: 0px 1px 0px rgba(255,255,255,.3);
+        }
+    a, a:visited
+        {
+        color: @light-brown;
+        text-shadow: 0px 1px 0px rgba(255,255,255,.3);
+        text-decoration: none;
+        margin: 0px;
+        &:hover
+            {
+            color: @brown;
+            }
+        }
+    h4
+        {
+        margin: 10px 0px 10px 0px;
+        letter-spacing: 0px;
+        font-size: 10pt;
+        }
+    ul
+        {
+        margin: 0px;
+        padding: 0;
+        li
+            {
+            margin: 5px 0px;
+            list-style: none;
+            font-size: 10pt;
+            }
+        &.nav
+            {
+            margin-top: 20px;
+            li
+                {
+                opacity: .7;
+                &:hover
+                    {
+                    opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+i.icon16
+    {
+    width: 16px;
+    height: 16px;
+    background: url(../img/icons16.png) 0px 0px no-repeat transparent;
+    display: inline-block;
+    line-height: 20px;
+    vertical-align: middle;
+    &.linkedin     { background-position: 0px 0*-16px; }
+    &.phone        { background-position: 0px 1*-16px; }
+    &.email        { background-position: 0px 2*-16px; }
+    &.location     { background-position: 0px 3*-16px; }
+    &.work         { background-position: 0px 5*-16px; }
+    &.education    { background-position: 0px 6*-16px; }
+    &.editing      { background-position: 0px 7*-16px; }
+    &.publications { background-position: 0px 8*-16px; }
+    &.speaking     { background-position: 0px 9*-16px; }
+    &.conferences  { background-position: 0px 10*-16px; }
+    &.fun          { background-position: 0px 11*-16px; }
+    }
+
+
+#clip
+    {
+    width: 24px;
+    height: 44px;
+    background: url(../img/clip.png) center center no-repeat transparent;
+    margin-top: -58px;
+    z-index: 200;
+    right: 0px;
+    margin-right: 60px;
+    position: absolute;
+    }
+
+.sectionblock
+    {
+    margin-bottom: 40px;
+    }
+
+.main article h1
+    {
+    color: @blue;
+    text-align: center;
+    font-size: 44px;
+    margin-top: 0px;
+    i
+        {
+        color: @light-blue;
+        font-style: normal;
+        display: block;
+        font-size: .7em;
+        line-height: 1.75em;
+        }
+    }
+
+.main article h2
+    {
+    padding: 20px 40px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,.3);
+    font-size: 32px;
+    line-height: 30px;
+    font-weight: lighter;
+    &:hover
+        {
+            background: url(../img/arrows.png) center center no-repeat @blue;
+            cursor: pointer;
+        }
+    color: white;
+    margin: 20px 0px;
+    background-color: @blue;
+    &:after
+        {
+        float: right;
+        content: "";
+        margin-top: -8px;
+        background: url(../img/icons48.png) 0px 0px no-repeat transparent;
+        width: 48px;
+        height: 48px;
+        margin-right: -10px;
+        }
+    }
+
+a[name="work"] h2:after { background-position: 0px 0 * -48px; }
+a[name="education"] h2:after { background-position: 0px 1 * -48px; }
+a[name="editing"] h2:after { background-position: 0px 2 * -48px; }
+a[name="publications"] h2:after { background-position: 0px 3 * -48px; }
+a[name="speaking"] h2:after { background-position: 0px 4 * -48px; }
+a[name="conferences"] h2:after { background-position: 0px 5 * -48px; }
+a[name="fun"] h2:after { background-position: 0px 6 * -48px; }
+
+div.block
+    {
+    padding: 0px;
+    background: @light-blue;
+    @datewidth: 70px;
+    div.date {
+        float: left;
+        color: white;
+        font-family: "Arvil Sans";
+        font-size: 24px;
+        // line-height: 28px;
+        width: @datewidth;
+        text-align: right;
+        padding-top: 20px;
+    }
+    h3, ul, p
+        {
+        background: white;
+        margin: 0px 0px 0px (@datewidth + 20);
+        padding: 20px;
+        }
+    ul
+        {
+        padding-top: 0px;
+        padding-left: 40px;
+        }
+    p
+        {
+        padding-top: 0px;
+        }
+
+    h3
+        {
+        color: #222;
+        font-size: 28px;
+        line-height: 1.2em;
+        padding-bottom: 10px;
+        i
+            {
+            color: @light-blue;
+            font-style: normal;
+            &:not(.break):before
+                {
+                content: "• ";
+                }
+            &.break
+                {
+                display: block;
+                }
+            }
+        }
+    }
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 767px)
+    {
+        .sectionblock
+            {
+            display: none;
+            }
+
+    .main aside
+        {
+        h3, h4 {display: none;}
+        li {display: inline-block; padding: 0px 10px; }
+        ul {margin: 0px auto; text-align: center;}
+        ul.nav {display: none;}
+        margin-top: -20px;
+        }
+    }
+
+@media only screen and (min-width: 768px)
+    {
+    .main
+        {
+        article
+            {
+            float: left;
+            width: 75%;
+            padding: 0px;
+            margin: 0px;
+            }
+        aside
+            {
+            position: fixed;
+            // right: 0px;
+            top: 40px;
+            width: 100%;
+            margin: auto;
+            padding: 0px;
+            height: 0px;
+            .inner
+                {
+                margin-right: 30px;
+                width: 25%;
+                display: block;
+                float: right;
+                box-sizing: border-box;
+                padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    // .main aside {
+    //     float: right;
+    //     width: 25%;
+    //     box-sizing: border-box;
+    //     padding: 0px 0px 0px 20px;
+    // }
+
+
+@media only screen and (min-width: 940px)
+    {
+    .wrapper
+        {
+        width: 900px;
+        // padding: 20px 0px;
+        margin: 0px auto;
+        }
+    .main aside
+        {
+        width: 900px;
+        .inner
+            {margin-right: 0px;}
+        }
+    }
+
