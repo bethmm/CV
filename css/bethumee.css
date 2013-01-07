@@ -218,25 +218,25 @@ i.icon16.fun {
   height: 48px;
   margin-right: -10px;
 }
-a[name="work"] h2:after {
+a#work h2:after {
   background-position: 0px 0px;
 }
-a[name="education"] h2:after {
+a#education h2:after {
   background-position: 0px -48px;
 }
-a[name="editing"] h2:after {
+a#editing h2:after {
   background-position: 0px -96px;
 }
-a[name="publications"] h2:after {
+a#publications h2:after {
   background-position: 0px -144px;
 }
-a[name="speaking"] h2:after {
+a#speaking h2:after {
   background-position: 0px -192px;
 }
-a[name="conferences"] h2:after {
+a#conferences h2:after {
   background-position: 0px -240px;
 }
-a[name="fun"] h2:after {
+a#fun h2:after {
   background-position: 0px -288px;
 }
 div.block {
