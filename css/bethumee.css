@@ -28,30 +28,128 @@ h3 {
   font-family: "Arvil Sans";
 }
 body {
-  background: url(../img/wood.png) 0px 0px repeat #e2c195;
-  background-attachment: fixed;
+  background: url(../img/berlin.jpg) 0px 0px no-repeat #e2c195;
+  background-size: contain;
 }
-header,
 div.block,
 h2 {
-  background: white;
   padding: 40px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px;
 }
 header {
-  margin-bottom: 40px;
+  padding: 40px;
   position: relative;
+}
+#intro {
+  zoom: 1;
+}
+#intro:before {
+  content: '';
+  display: block;
+}
+#intro:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#intro .left {
+  float: left;
+  width: 65%;
+}
+#intro .right {
+  float: left;
+  width: 35%;
+}
+ul.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.skills li {
+  display: inline-block;
+  width: 32%;
+  margin: 0px 0px 10px 0px;
+  vertical-align: top;
+  font-family: "Arvil Sans";
+  text-align: center;
+  font-size: 20px;
+}
+ul.skills li:before {
+  content: "";
+  display: block;
+  background: url(../img/bulbs.png) 0px 0px no-repeat;
+  width: 53px;
+  height: 75px;
+  margin: 0px auto 5px auto;
+}
+ul.skills li.skill1:before {
+  background-position: -220px 0px;
+}
+ul.skills li.skill2:before {
+  background-position: -165px 0px;
+}
+ul.skills li.skill3:before {
+  background-position: -110px 0px;
+}
+ul.skills li.skill4:before {
+  background-position: -55px 0px;
+}
+ul.skills li.skill5:before {
+  background-position: 0px 0px;
+}
+ul.skills li.skill6:before {
+  background-position: -275px 0px;
+}
+ul.skills li.skill99:before {
+  background-position: -330px 0px;
+}
+ul.languages {
+  list-style: none;
+  margin: 0 0 0 5px;
+  padding: 0;
+}
+ul.languages li {
+  margin: 0px;
+  font-family: "Arvil Sans";
+  font-size: 20px;
+  margin-bottom: 23px;
+  white-space: nowrap;
+}
+ul.languages li:after {
+  content: "";
+  display: inline-block;
+  background: url(../img/language.png) 0px 0px repeat-x;
+  width: 18px;
+  height: 15px;
+  vertical-align: baseline;
+  margin-left: 5px;
+}
+ul.languages li.skill1:after {
+  width: 18px;
+}
+ul.languages li.skill2:after {
+  width: 36px;
+}
+ul.languages li.skill3:after {
+  width: 54px;
+}
+ul.languages li.skill4:after {
+  width: 72px;
+}
+ul.languages li.skill5:after {
+  width: 90px;
 }
 #photo {
   width: 120px;
   height: 120px;
   background: white;
   padding: 8px;
+  margin-bottom: 20px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 0px;
-  right: 40px;
+  top: 140px;
+  right: -140px;
   transform: rotate(10deg);
   -ms-transform: rotate(10deg);
   -webkit-transform: rotate(10deg);
@@ -81,7 +179,14 @@ header {
     height: 100px;
     padding: 6px;
     right: 20px;
+    top: 20px;
   }
+}
+.main.wrapper {
+  background: url(../img/alex.png) right 300px no-repeat transparent;
+}
+.main aside .inner {
+  margin-top: 330px;
 }
 .main aside h3 {
   margin: 20px 0px 10px 0px;
@@ -190,7 +295,7 @@ i.icon16.fun {
   margin-top: 0px;
 }
 .main article h1 i {
-  color: #91a6c3;
+  color: #3d424c;
   font-style: normal;
   display: block;
   font-size: .7em;
@@ -204,7 +309,7 @@ i.icon16.fun {
   font-weight: lighter;
   color: white;
   margin: 20px 0px;
-  background-color: #3b5f90;
+  background-color: rgba(59, 95, 144, 0.9);
 }
 .main article h2:hover {
   background: url(../img/arrows.png) center center no-repeat #3b5f90;
@@ -242,7 +347,7 @@ a#fun h2:after {
 }
 div.block {
   padding: 0px;
-  background: #91a6c3;
+  background: url(../img/blue.png) top left repeat-y transparent;
 }
 div.block div.date {
   float: left;
@@ -256,7 +361,7 @@ div.block div.date {
 div.block h3,
 div.block ul,
 div.block p {
-  background: white;
+  background: rgba(255, 255, 255, 0.85);
   margin: 0px 0px 0px 90px;
   padding: 20px;
 }
@@ -306,6 +411,7 @@ footer a:hover {
   }
   .main aside {
     margin-top: -20px;
+    margin-bottom: 20px;
   }
   .main aside h3,
   .main aside h4 {
@@ -357,5 +463,77 @@ footer a:hover {
   }
   .main aside .inner {
     margin-right: 0px;
+  }
+}
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+  
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+       * Don't show links for images, or javascript/internal links
+       */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */
+  
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  ul.nav {
+    display: none;
+  }
+  aside {
+    margin: 0;
+  }
+  aside h3,
+  aside h4 {
+    display: none;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3,
+  a.sectionhead {
+    page-break-after: avoid;
   }
 }

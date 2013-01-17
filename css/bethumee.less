@@ -11,6 +11,12 @@
 @light-brown: rgb(120, 98, 91);
 /* FONTS*/
 
+.clearfix() {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: table; clear: both; }
+}
+
 @font-face
     {
     font-family: "Arvil Sans";
@@ -49,13 +55,13 @@ h1, h2, h3
 
 body
     {
-    background: url(../img/wood.png) 0px 0px repeat rgb(226,193,149);
-    background-attachment: fixed;
+    background: url(../img/berlin.jpg) 0px 0px no-repeat rgb(226,193,149);
+    // background-attachment: fixed;
+    background-size: contain;
     }
 
-header, div.block, h2
+div.block, h2
     {
-    background: white;
     padding: 40px;
     box-shadow: 0px 2px 5px rgba(0,0,0,.3);
     margin-bottom: 20px;
@@ -63,8 +69,85 @@ header, div.block, h2
 
 header
     {
-    margin-bottom: 40px;
+    padding: 40px;
     position: relative;
+    }
+
+#intro
+    {
+    .clearfix();
+    .left
+        {
+        float: left;
+        width: 65%;
+        }
+    .right
+        {
+        float: left;
+        width: 35%;
+        }
+    }
+ul.skills
+    {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li
+        {
+        display: inline-block;
+        width: 32%;
+        margin: 0px 0px 10px 0px;
+        vertical-align: top;
+        font-family: "Arvil Sans";
+        text-align: center;
+        font-size: 20px;
+        &:before
+            {
+            content: "";
+            display: block;
+            background: url(../img/bulbs.png) 0px 0px no-repeat;
+            width: 53px;
+            height: 75px;
+            margin: 0px auto 5px auto;
+            }
+        &.skill1:before { background-position: 4*-55px 0px;}
+        &.skill2:before { background-position: 3*-55px 0px;}
+        &.skill3:before { background-position: 2*-55px 0px;}
+        &.skill4:before { background-position: 1*-55px 0px;}
+        &.skill5:before { background-position: 0*-55px 0px;}
+        &.skill6:before { background-position: 5*-55px 0px;}
+        &.skill99:before { background-position: 6*-55px 0px;}
+        }
+    }
+
+ul.languages
+    {
+    list-style: none;
+    margin: 0 0 0 5px;
+    padding: 0;
+    li
+        {
+        margin: 0px;
+        font-family: "Arvil Sans";
+        font-size: 20px;
+        margin-bottom: 23px;
+        white-space: nowrap;
+        &:after
+            {
+            content: "";
+            display: inline-block;
+            background: url(../img/language.png) 0px 0px repeat-x;
+            width: 18px;
+            height: 15px;
+            vertical-align: baseline;
+            margin-left: 5px;
+            }
+        &.skill1:after { width: 1*18px;}
+        &.skill2:after { width: 2*18px;}
+        &.skill3:after { width: 3*18px;}
+        &.skill4:after { width: 4*18px;}
+        &.skill5:after { width: 5*18px;}
+        }
     }
 
 #photo
@@ -73,10 +156,11 @@ header
     height: 120px;
     background: white;
     padding: 8px;
+    margin-bottom: 20px;
     box-shadow: 0px 1px 3px rgba(0,0,0,.4);
     position: absolute;
-    top: 0px;
-    right: 40px;
+    top: 140px;
+    right: -140px;
     transform:         rotate(10deg);
         -ms-transform: rotate(10deg);
     -webkit-transform: rotate(10deg);
@@ -109,13 +193,19 @@ header
         height: 100px;
         padding: 6px;
         right: 20px;
+        top: 20px;
         }
 }
 
+.main.wrapper
+    {
+    background: url(../img/alex.png) right 300px no-repeat transparent;
+    }
 .main aside
     {
     .inner
         {
+        margin-top: 330px;
         }
     h3
         {
@@ -219,7 +309,7 @@ i.icon16
     margin-top: 0px;
     i
         {
-        color: @light-blue;
+        color: @gray;
         font-style: normal;
         display: block;
         font-size: .7em;
@@ -241,7 +331,7 @@ i.icon16
         }
     color: white;
     margin: 20px 0px;
-    background-color: @blue;
+    background-color: fadeout(@blue, 10%);
     &:after
         {
         float: right;
@@ -265,7 +355,7 @@ a#fun h2:after { background-position: 0px 6 * -48px; }
 div.block
     {
     padding: 0px;
-    background: @light-blue;
+    background: url(../img/blue.png) top left repeat-y transparent;
     @datewidth: 70px;
     div.date {
         float: left;
@@ -279,7 +369,7 @@ div.block
     }
     h3, ul, p
         {
-        background: white;
+        background: fadeout(white, 15%);
         margin: 0px 0px 0px (@datewidth + 20);
         padding: 20px;
         }
@@ -351,6 +441,7 @@ footer
         ul {margin: 0px auto; text-align: center;}
         ul.nav {display: none;}
         margin-top: -20px;
+        margin-bottom: 20px;
         }
     }
 
@@ -410,4 +501,82 @@ footer
             {margin-right: 0px;}
         }
     }
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+    ul.nav {display: none; }
+    aside
+        {
+            margin: 0;
+        h3, h4 { display: none; }
+        }
+
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3, a.sectionhead {
+        page-break-after: avoid;
+    }
+}
 
