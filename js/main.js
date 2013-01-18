@@ -4,27 +4,31 @@
 
 var scroll = function ()
     {
-    var bg = $(window).scrollTop() *.8;
-    var mt = Math.max(0, 330-$(window).scrollTop());
-    var alex = 300 + $(window).scrollTop() * 0.6;
-    if ($(window).scrollTop() > ($(window).height() - 1400) / -.4)
-            {
-            alex += ($(window).scrollTop() - ($(window).height() - 1400) / -.4) * .4
-            }
+    // var alex = 300 + $(window).scrollTop() * 0.6;
+    // if ($(window).scrollTop() > ($(window).height() - 1400) / -.4)
+    //         {
+    //         alex += ($(window).scrollTop() - ($(window).height() - 1400) / -.4) * .4
+    //         }
+
+    var bg = -$(window).scrollTop() *.2;
     var bg_height = $(window).width() / 1299 * 1575;
     if ($(window).scrollTop() > ($(window).height() - bg_height) / -.2)
             {
             bg += ($(window).scrollTop() - ($(window).height() - bg_height) /  -.2) * .2;
             }
-
-
     $("body").css("background-position", "0px "+bg+"px");
+    var mt = Math.max(0, 330-$(window).scrollTop());
     if ($(window).width() > 768)
-        $(".main aside .inner").css("margin-top", mt+"px");
-    else
-        $(".main aside .inner").css("margin-top", "0px");
+    {
+        if ($(window).scrollTop() > $(".main aside").offset().top - 20)
+            $(".main aside .inner").css("margin-top", ($(window).scrollTop() - $(".main aside").offset().top + 20)+"px");
+        else
+            $(".main aside .inner").css("margin-top", "0px");
+    }
+    // else
+    //     $(".main aside .inner").css("margin-top", "0px");
 
-    $(".main.wrapper").css("background-position", "right "+alex+"px");
+    // $(".main.wrapper").css("background-position", "right "+alex+"px");
     }
 
 

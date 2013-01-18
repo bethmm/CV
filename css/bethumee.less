@@ -55,10 +55,11 @@ h1, h2, h3
 
 body
     {
-    background: url(../img/berlin.jpg) 0px 0px no-repeat rgb(226,193,149);
-    // background-attachment: fixed;
-    background-size: contain;
-    }
+    background: url(../img/berlin.jpg) 0px 0px no-repeat  fixed rgb(226,193,149);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;    }
 
 div.block, h2
     {
@@ -69,8 +70,19 @@ div.block, h2
 
 header
     {
-    padding: 40px;
+    padding: 40px 140px ;
+    text-align: justify;
     position: relative;
+    margin-top: 100px;
+    -webkit-hyphens: auto;
+    p
+        {
+        font-size: 12pt;
+        font-weight: lighter;
+        line-height: 1.65em;
+        }
+    -moz-hyphens: auto;
+    hyphens: auto;
     }
 
 #intro
@@ -159,8 +171,8 @@ ul.languages
     margin-bottom: 20px;
     box-shadow: 0px 1px 3px rgba(0,0,0,.4);
     position: absolute;
-    top: 140px;
-    right: -140px;
+    top: 0px;
+    right: 170px;
     transform:         rotate(10deg);
         -ms-transform: rotate(10deg);
     -webkit-transform: rotate(10deg);
@@ -192,24 +204,23 @@ ul.languages
         width: 100px;
         height: 100px;
         padding: 6px;
-        right: 20px;
         top: 20px;
+        right: 20px;
         }
 }
 
-.main.wrapper
-    {
-    background: url(../img/alex.png) right 300px no-repeat transparent;
-    }
+// .main.wrapper
+//     {
+//     background: url(../img/alex.png) right 300px no-repeat transparent;
+//     }
 .main aside
     {
     .inner
         {
-        margin-top: 330px;
         }
     h3
         {
-        margin: 20px 0px 10px 0px;
+        margin: 5px 0px 10px 0px;
         color: @brown;
         text-shadow: 0px 1px 0px rgba(255,255,255,.5);
         font-size: 36px;
@@ -291,7 +302,7 @@ i.icon16
     background: url(../img/clip.png) center center no-repeat transparent;
     margin-top: -58px;
     z-index: 200;
-    right: 0px;
+    right: 160px;
     margin-right: 60px;
     position: absolute;
     }
@@ -301,7 +312,7 @@ i.icon16
     margin-bottom: 40px;
     }
 
-.main article h1
+.main header h1
     {
     color: @blue;
     text-align: center;
@@ -429,6 +440,10 @@ footer
 
 @media only screen and (max-width: 767px)
     {
+                header {
+            padding: 40px 20px;
+        }
+
         .sectionblock
             {
             display: none;
@@ -458,11 +473,10 @@ footer
             }
         aside
             {
-            position: fixed;
+            float: left;
             // right: 0px;
-            top: 40px;
-            width: 100%;
-            margin: auto;
+            // margin: auto;
+            width: 25%;
             padding: 0px;
             height: 0px;
             .inner
