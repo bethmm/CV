@@ -236,7 +236,7 @@ ul.languages li.skill5:after {
   margin-top: 20px;
 }
 .main aside ul.nav li {
-  opacity: .7;
+  opacity: .8;
 }
 .main aside ul.nav li:hover {
   opacity: 1;
@@ -418,6 +418,10 @@ footer a:hover {
   }
   .sectionblock {
     display: none;
+  }
+  #intro .left {
+    float: none;
+    background: red;
   }
   .main aside {
     margin-top: -20px;
