@@ -10,13 +10,13 @@ var scroll = function ()
     //         alex += ($(window).scrollTop() - ($(window).height() - 1400) / -.4) * .4
     //         }
 
-    var bg = -$(window).scrollTop() *.2;
-    var bg_height = $(window).width() / 1299 * 1575;
-    if ($(window).scrollTop() > ($(window).height() - bg_height) / -.2)
-            {
-            bg += ($(window).scrollTop() - ($(window).height() - bg_height) /  -.2) * .2;
-            }
-    $("body").css("background-position", "0px "+bg+"px");
+    // var bg = -$(window).scrollTop() *.2;
+    // var bg_height = $(window).width() / 1299 * 1575;
+    // if ($(window).scrollTop() > ($(window).height() - bg_height) / -.2)
+    //         {
+    //         bg += ($(window).scrollTop() - ($(window).height() - bg_height) /  -.2) * .2;
+    //         }
+    // $("body").css("background-position", "0px "+bg+"px");
     var mt = Math.max(0, 330-$(window).scrollTop());
     if ($(window).width() > 768)
         {
@@ -25,8 +25,8 @@ var scroll = function ()
         else
             $(".main aside .inner").css("margin-top", "0px");
        }
-    else
-        $("body").css("background-position", "0px 0px");
+    // else
+    //     $("body").css("background-position", "0px 0px");
 
     // $(".main.wrapper").css("background-position", "right "+alex+"px");
     }
@@ -34,7 +34,7 @@ var scroll = function ()
 
 $(document).ready(function ($)
     {
-        $(window).scroll(scroll);
+        $(document).scroll(scroll);
         // Toggle containers
         $("h2").on("click", function ()
         {

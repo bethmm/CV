@@ -59,7 +59,8 @@ body
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;    }
+    background-size: cover;
+    }
 
 div.block, h2
     {
@@ -198,26 +199,8 @@ ul.languages
         }
     }
 
-@media only screen and (max-width: 767px) {
-    #photo
-        {
-        width: 100px;
-        height: 100px;
-        padding: 6px;
-        top: 20px;
-        right: 20px;
-        }
-}
-
-// .main.wrapper
-//     {
-//     background: url(../img/alex.png) right 300px no-repeat transparent;
-//     }
 .main aside
     {
-    .inner
-        {
-        }
     h3
         {
         margin: 5px 0px 10px 0px;
@@ -438,17 +421,66 @@ footer
    Media Queries
    ========================================================================== */
 
+@media only screen and (max-width: 460px)
+    {
+    .wrapper
+        {
+        width: 440px;
+        padding: 0px 20px 0px 0px;
+        margin: 0px auto;
+        }
+    }
 @media only screen and (max-width: 767px)
     {
-        header
-            {
-            padding: 40px 20px;
-            }
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-attachment: fixed;
+    -moz-background-attachment: fixed;
+    -o-background-attachment: fixed;
+    background-attachment: fixed;
 
-        .sectionblock
+    div.block
+        {
+        background: white;
+        div.date
             {
-            display: none;
+            br {display:none}
+            float: none;
+            background: #97a9bf;
+            padding: 7px 20px 5px 20px;
+            width: auto;
+            text-align: left;
+            height: auto;
             }
+        h2, h3, h4, p, ul
+            {
+            margin-left: 0px;
+            }
+        }
+    #photo
+        {
+        width: 100px;
+        height: 100px;
+        padding: 6px;
+        top: -10px;
+        right: 20px;
+        }
+    header
+        {
+        margin-top: 20px;
+        padding: 0 20px 40px 20px;
+        }
+    #clip
+        {
+        right: -25px;
+        top: 35px;
+        }
+    .sectionblock
+        {
+        display: none;
+        }
     #intro
         {
         .left
