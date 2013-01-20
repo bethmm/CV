@@ -19,14 +19,14 @@ var scroll = function ()
     $("body").css("background-position", "0px "+bg+"px");
     var mt = Math.max(0, 330-$(window).scrollTop());
     if ($(window).width() > 768)
-    {
+        {
         if ($(window).scrollTop() > $(".main aside").offset().top - 20)
             $(".main aside .inner").css("margin-top", ($(window).scrollTop() - $(".main aside").offset().top + 20)+"px");
         else
             $(".main aside .inner").css("margin-top", "0px");
-    }
-    // else
-    //     $(".main aside .inner").css("margin-top", "0px");
+       }
+    else
+        $("body").css("background-position", "0px 0px");
 
     // $(".main.wrapper").css("background-position", "right "+alex+"px");
     }
