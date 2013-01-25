@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Arvil Sans";
   src: url('../font/arvil_sans-webfont.eot');
-  src: url('../font/arvil_sans-webfont.eot?#iefix') format('embedded-opentype'), url('../font/arvil_sans-webfont.svg#arvil_sansregular') format('svg'), url('../font/arvil_sans-webfont.woff') format('woff'), url('../font/arvil_sans-webfont.ttf') format('truetype');
+  src: url('../font/arvil_sans-webfont.eot?#iefix') format('embedded-opentype'), url('../font/arvil_sans-webfont.woff') format('woff'), url('../font/arvil_sans-webfont.ttf') format('truetype'), url('../font/arvil_sans-webfont.svg#arvil_sansregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,7 @@ h1,
 h2,
 h3 {
   font-family: "Arvil Sans";
+  font-weight: lighter;
 }
 body {
   background: url(../img/berlin.jpg) 0px 0px no-repeat fixed #e2c195;
@@ -85,6 +86,7 @@ ul.skills li {
   margin: 0px 0px 10px 0px;
   vertical-align: top;
   font-family: "Arvil Sans";
+  font-weight: lighter;
   text-align: center;
   font-size: 20px;
 }
@@ -125,6 +127,7 @@ ul.languages {
 ul.languages li {
   margin: 0px;
   font-family: "Arvil Sans";
+  font-weight: lighter;
   font-size: 20px;
   margin-bottom: 23px;
   white-space: nowrap;
@@ -351,6 +354,7 @@ div.block div.date {
   float: left;
   color: white;
   font-family: "Arvil Sans";
+  font-weight: lighter;
   font-size: 24px;
   width: 70px;
   text-align: right;
